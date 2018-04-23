@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Clean Blog - Start Bootstrap Theme</title>
+
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">ลำดับ</th>
+        <th scope="col">ชื่อผลงาน</th>
+        <th scope="col">วันที่</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+    <a type="button" class="btn btn-outline-danger" href="<?php echo $this->url->getBaseUri(); ?>add">Add</a>
+      <?php 
+      $event=Event::find("");
+      for($i=0;$i<count($event);$i++){
+      ?>
+      <tr>
+        <th scope="row"><?php echo $i+1;?></th>
+        <td><?php echo $event[$i]->name;?></td>
+        <td><?php echo $event[$i]->date;?></td>
+        <!-- <td><button type="button" class="btn btn-outline-danger">Edit</button></td> -->
+        <td><a type="button" class="btn btn-outline-light" href="<?php echo $this->url->getBaseUri(); ?>event/toEdit/<?php echo $event[$i]->id;?>">Edit</a></td>
+        <td><a type="button" class="btn btn-outline-warning" href="<?php echo $this->url->getBaseUri(); ?>event/delete    /<?php echo $event[$i]->id;?>">Delete</a></td>
+       
+      </tr>
+      <?php 
+      }
+      ?>
+      <tr>
+
+    </tbody>
+  </table>
+</head>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

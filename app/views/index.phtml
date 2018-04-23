@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phalcon PHP Framework</title>
+    <?php echo $this->assets->outputCss('styles'); ?>    
+    <?php echo $this->assets->outputJs('scripts'); ?> 
+  </head>
+    <body id="page-top" >
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg  text-uppercase" id="mainNav">
+      <div class="container">
+   
+        <a style="color:lightblue;"class="navbar-brand js-scroll-trigger" href="<?php echo $this->url->getBaseUri(); ?>#page-top">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item mx-0 mx-lg-1">
+              <a style="color:lightblue;"class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About me</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a style="color:lightblue;"class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="<?php echo $this->url->getBaseUri(); ?>event">Event</a>
+            </li>
+            <li class="nav-item mx-0 mx-lg-1">
+              <a style="color:lightblue;"class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+           <ul class="navbar-nav  navbar-right">     
+   	<?php if($this->session->has('memberAuthen')) {?> 
+     
+   
+      <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about"><?php echo $this->session->get('memberEmail');?></a>
+     </li>
+    
+     <li class="nav-item mx-0 mx-lg-1">
+     		<a  class="btn btn-danger navbar-btn" href="authen/signOut"> Logout </a> 
+     </li>  
+    <?php } else {?>
+      <li class="nav-item mx-0 mx-lg-1">
+       <a href="<?php echo $this->url->getBaseUri(); ?>authen" class="btn btn-outline-primary"> Login </a>
+      </li>    
+     <li class="nav-item mx-0 mx-lg-1">
+       <a href="<?php echo $this->url->getBaseUri(); ?>authen/signUp" class="btn btn-outline-info"> Sign Up </a>
+      </li>
+      <?php }?>
+    </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header -->
+   
+    <header class="masthead  text-white">
+    <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <br> <br> <br> <br> <br> <br> <br>
+    <div class="container"><?php echo $this->getContent(); ?></div>   
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1> <br> <br> <br> <br> <br> <br> </h1>         
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  
+          
+    </header>
+
+   <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 style="display:table;margin:auto; color:lightblue;" class="section-heading text-uppercase">   About</h2>
+            <h3 style="display:table;margin:auto; color:lightsalmon;" class="section-subheading text-muted">ข้อมูลส่วนตัว</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <ul class="timeline">
+              <li>
+                <div class="timeline-image">
+                  <img style="width:200px; height:200px;display:table;margin:auto "class="rounded-circle img-fluid" src="C:\Users\MSI-GP72.6QF\Desktop\Fame.jpg" alt="">
+                </div>
+                <div class="timeline-panel">
+                  <div class="timeline-heading">
+                    <h4 style="display:table;margin:auto; color:lightsalmon;">590610621</h4>
+                    <h4 style="display:table;margin:auto; color:lightsalmon;"class="subheading">Thanatat Voraveeravong</h4>
+                  </div>
+                  <div class="timeline-body">
+                    <p style="display:table;margin:auto; "class="text-muted">นาย ธนทัต วรวีระวงศ์ 590610621 </p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+
+    
+    <!-- Footer -->  
+<
+    <div class="copyright py-4 text-center text-white">
+      <div class="container">
+        <small>Copyright &copy; Your Website 2018</small>
+      </div>
+    </div>
+
+  </body>
+  
+</html>
